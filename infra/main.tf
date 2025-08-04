@@ -1,10 +1,10 @@
-terraform { 
+terraform {
   required_version = ">= 1.12.0"
 
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = ">= 4.38.1" 
+      version = ">= 4.38.1"
     }
   }
 
@@ -32,7 +32,7 @@ resource "azurerm_subnet" "subnet" {
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["10.0.1.0/24"]
 
-   depends_on = [azurerm_virtual_network.vnet]
+  depends_on = [azurerm_virtual_network.vnet]
 }
 
 resource "azurerm_public_ip" "public_ip" {
